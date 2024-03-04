@@ -6,12 +6,30 @@ const emojis = ["🍒", "🍋", "🍊", "🍉", "🍇", "🍓", "🍌", "🍍", 
 
 const getRandomEmoji = () => emojis[Math.floor(Math.random() * emojis.length)];
 
+import { useEffect } from "react";
+
 const SlotMachine = () => {
   const [slots, setSlots] = useState([getRandomEmoji(), getRandomEmoji(), getRandomEmoji()]);
+  const [spinning, setSpinning] = useState(false);
 
   const spin = () => {
-    setSlots([getRandomEmoji(), getRandomEmoji(), getRandomEmoji()]);
+    setSpinning(true);
+    let spinsLeft = 10;
+    const intervalId = setInterval(() => {
+      setSlots([getRandomEmoji(), getRandomEmoji(), getRandomEmoji()]);
+      spinsLeft--;
+      if (spinsLeft <= 0) {
+        clearInterval(intervalId);
+        setSpinning(false);
+      }
+    }, 100);
   };
+
+  useEffect(() => {
+    if (spinning) {
+      spin();
+    }
+  }, [spinning]);
 
   const isJackpot = slots.every((slot, _, arr) => slot === arr[0]);
 
@@ -29,10 +47,10 @@ const SlotMachine = () => {
             </Box>
           ))}
         </Flex>
-        <Button leftIcon={<FaRedo />} colorScheme="teal" onClick={spin}>
-          Spin
+        <Button leftIcon={<FaRedo />} colorScheme="teal" onClick={() => setSpinning(true)} isDisabled={spinning}>
+          {spinning ? "Spinning..." : "Spin"}
         </Button>
-        {isJackpot && (
+        {!spinning && isJackpot && (
           <Text fontSize="2xl" color="green.500">
             🎉 Jackpot! 🎉
           </Text>

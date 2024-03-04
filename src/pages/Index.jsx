@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Box, Button, Center, Container, Divider, Flex, Heading, Text, VStack } from "@chakra-ui/react";
+import Advertisement from "../components/Advertisement";
 import { FaRedo } from "react-icons/fa";
 
 const emojis = ["🍒", "🍋", "🍊", "🍉", "🍇", "🍓", "🍌", "🍍", "🥝"];
@@ -63,7 +64,9 @@ const SlotMachine = () => {
 const Index = () => {
   return (
     <Center h="100vh" bg="gray.100">
+      <Advertisement />
       <SlotMachine />
+      <Advertisement />
     </Center>
   );
 };

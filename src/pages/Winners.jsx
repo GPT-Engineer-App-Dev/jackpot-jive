@@ -3,11 +3,11 @@ import { Box, Heading, List, ListItem } from "@chakra-ui/react";
 
 const Winners = () => {
   const winnersList = [
-    { name: "Alice", amount: 5000 },
-    { name: "Bob", amount: 3000 },
-    { name: "Charlie", amount: 6000 },
-    { name: "Diana", amount: 1500 },
-    { name: "Edward", amount: 2400 },
+    { name: "Alice", amount: 5000000 },
+    { name: "Bob", amount: 3000000 },
+    { name: "Charlie", amount: 6000000 },
+    { name: "Diana", amount: 1500000 },
+    { name: "Edward", amount: 2400000 },
   ];
 
   return (

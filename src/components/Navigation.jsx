@@ -9,6 +9,9 @@ const Navigation = () => {
         <Button as={RouterLink} to="/about" px={2} colorScheme="teal" variant="outline" mr={2}>
           About
         </Button>
+        <Button as={RouterLink} to="/winners" px={2} colorScheme="teal" variant="outline" mr={2}>
+          Winners
+        </Button>
         <Link as={RouterLink} to="/" px={2}>
           Home
         </Link>

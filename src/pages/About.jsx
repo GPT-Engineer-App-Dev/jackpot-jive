@@ -35,6 +35,12 @@ const About = () => {
             <Text fontSize="md" mb={4}>
               Have questions? Reach out to us at contact@example.com or call us at (123) 456-7890.
             </Text>
+            <Heading as="h2" size="lg" mb={3}>
+              Meet Our Team
+            </Heading>
+            <Text fontSize="md" mb={4}>
+              Our team is composed of dedicated professionals with a passion for gaming and entertainment. We work tirelessly to bring you the best gambling experience.
+            </Text>
             <GamblingAds />
           </Box>
         </Center>

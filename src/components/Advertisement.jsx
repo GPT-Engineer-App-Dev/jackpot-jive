@@ -13,7 +13,6 @@ const Advertisement = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setColorIndex((prevIndex) => (prevIndex + 1) % colors.length);
-      setAdMessage(adMessages[Math.floor(Math.random() * adMessages.length)]);
     }, 500);
     return () => clearInterval(intervalId);
   }, []);

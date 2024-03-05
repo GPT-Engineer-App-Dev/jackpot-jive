@@ -12,6 +12,7 @@ import { useEffect } from "react";
 
 const SlotMachine = () => {
   const [slots, setSlots] = useState([getRandomEmoji(), getRandomEmoji(), getRandomEmoji()]);
+  const [credits, setCredits] = useState(10);
   const [spinning, setSpinning] = useState(false);
 
   const spin = () => {
@@ -49,12 +50,23 @@ const SlotMachine = () => {
             </Box>
           ))}
         </Flex>
-        <Button leftIcon={<FaRedo />} colorScheme="teal" onClick={() => setSpinning(true)} isDisabled={spinning}>
+        <Button
+          leftIcon={<FaRedo />}
+          colorScheme="teal"
+          onClick={() => {
+            setSpinning(true);
+            setCredits(credits - 1);
+          }}
+          isDisabled={spinning || credits <= 0}
+        >
           {spinning ? "Spinning..." : "Spin"}
         </Button>
+        <Text fontSize="lg" color="gray.700">
+          Credits: {credits}
+        </Text>
         {!spinning && isJackpot && (
           <>
-            <Confetti /> {}
+            <Confetti />
             <Text fontSize="2xl" color="green.500">
               🎉 Jackpot! 🎉
             </Text>

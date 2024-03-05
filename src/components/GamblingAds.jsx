@@ -23,7 +23,7 @@ const GamblingAds = () => {
     <VStack>
       {adMessages.map((message, index) => (
         <Box key={index} w="100%">
-          <Advertisement adMessage={message} bgColor={colors[colorIndices[index]]} />
+          <Advertisement adMessage={message} />
         </Box>
       ))}
     </VStack>

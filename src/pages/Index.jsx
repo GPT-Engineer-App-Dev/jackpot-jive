@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Box, Button, Center, Container, Divider, Flex, Heading, Text, VStack } from "@chakra-ui/react";
 import GamblingAds from "../components/GamblingAds";
+import Navigation from "../components/Navigation";
 import Confetti from "../components/Confetti";
 import { FaRedo } from "react-icons/fa";
 
@@ -82,7 +83,8 @@ const SlotMachine = () => {
 
 const Index = () => {
   return (
-    <Center h="100vh" bg="gray.100">
+    <Center h="100vh" bg="gray.100" flexDirection="column">
+      <Navigation />
       <GamblingAds />
       <SlotMachine />
       <GamblingAds />

@@ -1,0 +1,25 @@
+import { Global } from "@emotion/react";
+
+const GlobalStyles = () => (
+  <Global
+    styles={`
+      @keyframes confetti-animation {
+        0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(500px) rotate(720deg); opacity: 0; }
+      }
+    `}
+  />
+);
+
+const Index = () => {
+  return (
+    <>
+      <GlobalStyles /> {}
+      <Center h="100vh" bg="gray.100">
+        <Advertisement />
+        <SlotMachine />
+        <Advertisement />
+      </Center>
+    </>
+  );
+};

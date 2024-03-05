@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Box, Button, Center, Container, Divider, Flex, Heading, Text, VStack } from "@chakra-ui/react";
 import Advertisement from "../components/Advertisement";
+import Confetti from "../components/Confetti";
 import { FaRedo } from "react-icons/fa";
 
 const emojis = ["🍒", "🍋", "🍊", "🍉", "🍇", "🍓", "🍌", "🍍", "🥝"];
@@ -52,9 +53,12 @@ const SlotMachine = () => {
           {spinning ? "Spinning..." : "Spin"}
         </Button>
         {!spinning && isJackpot && (
-          <Text fontSize="2xl" color="green.500">
-            🎉 Jackpot! 🎉
-          </Text>
+          <>
+            <Confetti /> {}
+            <Text fontSize="2xl" color="green.500">
+              🎉 Jackpot! 🎉
+            </Text>
+          </>
         )}
       </VStack>
     </Container>

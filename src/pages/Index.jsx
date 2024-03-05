@@ -24,6 +24,9 @@ const SlotMachine = () => {
       if (spinsLeft <= 0) {
         clearInterval(intervalId);
         setSpinning(false);
+        if (isJackpot) {
+          setCredits(credits + 50);
+        }
       }
     }, 100);
   };

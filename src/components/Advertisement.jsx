@@ -13,7 +13,7 @@ const Advertisement = ({ adMessage }) => {
       setBgColor(colors[Math.floor(Math.random() * colors.length)]);
     };
 
-    const randomInterval = Math.floor(Math.random() * 500) + 250;
+    const randomInterval = Math.floor(Math.random() * 400) + 100;
     const timeoutId = setTimeout(changeColor, randomInterval);
 
     return () => clearTimeout(timeoutId);

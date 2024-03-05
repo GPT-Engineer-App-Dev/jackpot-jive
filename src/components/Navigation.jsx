@@ -4,7 +4,7 @@ import { Link as RouterLink } from "react-router-dom";
 
 const Navigation = () => {
   return (
-    <Flex as="nav" align="center" justify="space-between" wrap="wrap" padding="1.5rem" bg="teal.500" color="white">
+    <Flex as="nav" align="center" justify="space-between" wrap="wrap" padding="1.5rem" bg="teal.500" color="white" position="fixed" top="0" left="0" right="0" zIndex="banner">
       <Box>
         <Button as={RouterLink} to="/about" px={2} colorScheme="teal" variant="outline" mr={2}>
           About

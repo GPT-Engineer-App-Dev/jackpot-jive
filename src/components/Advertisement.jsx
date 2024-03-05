@@ -13,11 +13,11 @@ const Advertisement = ({ adMessage }) => {
       setBgColor(colors[Math.floor(Math.random() * colors.length)]);
     };
 
-    const randomInterval = Math.floor(Math.random() * 400) + 100;
+    const randomInterval = Math.floor(Math.random() * 500) + 250;
     const timeoutId = setTimeout(changeColor, randomInterval);
 
     return () => clearTimeout(timeoutId);
-  }, [bgColor]);
+  }, []);
 
   return (
     <Box p={4} bg={bgColor} borderRadius="md" boxShadow="md">

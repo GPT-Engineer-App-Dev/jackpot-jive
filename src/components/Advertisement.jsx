@@ -5,10 +5,9 @@ const colors = ["yellow.300", "red.300", "green.300", "blue.300", "purple.300"];
 
 const adMessages = ["Try your luck with our latest gambling games and win big!", "Join the thrill and excitement, place your bets now!", "Feeling lucky? Spin the wheel and get a chance to hit the jackpot!", "Step right up to the ultimate gambling experience and win!", "Play the odds, enjoy the game, and walk away a winner!"];
 
-const Advertisement = () => {
+const Advertisement = ({ adMessage }) => {
   const [bgColor, setBgColor] = useState(colors[0]);
   const [colorIndex, setColorIndex] = useState(0);
-  const [adMessage, setAdMessage] = useState(adMessages[0]);
 
   useEffect(() => {
     const intervalId = setInterval(() => {

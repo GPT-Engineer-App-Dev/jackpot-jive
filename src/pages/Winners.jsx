@@ -5,7 +5,7 @@ const generateRandomWinners = (numWinners) => {
   const names = ["Alex", "Jordan", "Taylor", "Morgan", "Casey", "Skyler", "Quinn", "Avery", "Riley", "Jamie"];
   const randomWinners = [];
   for (let i = 0; i < numWinners; i++) {
-    const randomName = names[Math.floor(Math.random() * names.length)] + (i + 1);
+    const randomName = names[Math.floor(Math.random() * names.length)];
     const randomAmount = Math.floor(Math.random() * 10000000) + 1000000;
     randomWinners.push({ name: randomName, amount: randomAmount });
   }

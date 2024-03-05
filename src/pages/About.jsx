@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Center, Heading, Text } from "@chakra-ui/react";
+import { Box, Center, Heading, Text, VStack } from "@chakra-ui/react";
+import GamblingAds from "../components/GamblingAds";
 import Navigation from "../components/Navigation";
 
 const About = () => {
@@ -31,7 +32,10 @@ const About = () => {
             <Heading as="h2" size="lg" mb={3}>
               Contact Us
             </Heading>
-            <Text fontSize="md">Have questions? Reach out to us at contact@example.com or call us at (123) 456-7890.</Text>
+            <Text fontSize="md" mb={4}>
+              Have questions? Reach out to us at contact@example.com or call us at (123) 456-7890.
+            </Text>
+            <GamblingAds />
           </Box>
         </Center>
       </Box>

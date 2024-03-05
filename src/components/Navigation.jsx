@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Link, Box } from "@chakra-ui/react";
+import { Flex, Link, Box, Button } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 
 const Navigation = () => {
@@ -9,9 +9,9 @@ const Navigation = () => {
         <Link as={RouterLink} to="/" px={2}>
           Home
         </Link>
-        <Link as={RouterLink} to="/about" px={2}>
+        <Button as={RouterLink} to="/about" px={2} colorScheme="teal" variant="outline">
           About
-        </Link>
+        </Button>
       </Box>
     </Flex>
   );

@@ -1,13 +1,17 @@
 import React from "react";
 import { Box, Heading, List, ListItem } from "@chakra-ui/react";
 
-const generateRandomWinners = (numWinners) => {
+const generateRandomWinners = (numWinners, existingNames) => {
   const names = ["Alex", "Jordan", "Taylor", "Morgan", "Casey", "Skyler", "Quinn", "Avery", "Riley", "Jamie"];
+  const usedNames = new Set(existingNames);
   const randomWinners = [];
-  for (let i = 0; i < numWinners; i++) {
+  while (randomWinners.length < numWinners) {
     const randomName = names[Math.floor(Math.random() * names.length)];
-    const randomAmount = Math.floor(Math.random() * 10000000) + 1000000;
-    randomWinners.push({ name: randomName, amount: randomAmount });
+    if (!usedNames.has(randomName)) {
+      usedNames.add(randomName);
+      const randomAmount = Math.floor(Math.random() * 10000000) + 1000000;
+      randomWinners.push({ name: randomName, amount: randomAmount });
+    }
   }
   return randomWinners;
 };
@@ -20,8 +24,11 @@ const Winners = () => {
     { name: "Diana", amount: 1500000 },
     { name: "Edward", amount: 2400000 },
   ];
-  const newWinnersList = generateRandomWinners(100);
+  const existingNames = initialWinnersList.map((winner) => winner.name);
+  const newWinnersList = generateRandomWinners(100, existingNames);
   const winnersList = [...initialWinnersList, ...newWinnersList];
+
+  // This duplicate Winners component declaration is removed to fix the error.
 
   return (
     <Box>
